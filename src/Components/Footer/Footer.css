@@ -1,5 +1,6 @@
 .bs-icon {
   --bs-icon-size: .75rem;
+
   display: flex;
   flex-shrink: 0;
   justify-content: center;
@@ -55,3 +56,23 @@
   border-radius: 50%;
 }
 
+.footer {
+  padding-left: 240px;
+
+}
+
+.para p {
+  font-size: 15px;
+  padding: 0;
+
+}
+
+.copyright {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 991px) {
+  .footer {
+    padding-left: 0px;
+  }
+}

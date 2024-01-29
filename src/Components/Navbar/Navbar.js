@@ -23,7 +23,7 @@ function CollapsibleExample() {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="https://portfolio-nu-swart-24.vercel.app/">Portfolio</Nav.Link>
+                        <Nav.Link href="https://tanighclark.vercel.app/">Portfolio</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
