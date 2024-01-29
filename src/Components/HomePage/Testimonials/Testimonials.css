@@ -1,0 +1,32 @@
+.testimonials-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+}
+
+.user-name {
+    margin-top: 15px;
+    color: #1a73e8;
+    font-weight: bold;
+}

@@ -1,0 +1,69 @@
+.selected {
+    background-color: #007bff;
+    /* Example: Blue background */
+    color: white;
+    /* White text */
+    border: 1px solid #0056b3;
+    /* Darker blue border */
+}
+
+.text-to-speech-generator {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    padding-bottom: 20px;
+    gap: 23px;
+    background: #072433;
+    color: #999;
+}
+
+.heade {
+    font-size: 70px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+.heade span {
+    color: #de1b89;
+    font-weight: 600;
+}
+
+.text-to-speech-generator textarea {
+    width: 1000px;
+    height: 400px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    background: #1f3540;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    align-items: baseline;
+}
+
+.text-to-speech-generator textarea::placeholder {
+    color: #999;
+}
+
+.generate-btn {
+
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 85px;
+    font-size: 20px;
+    border-radius: 50px;
+    background: #de1b89;
+    cursor: pointer;
+}
+
+.voice-over button {
+    margin-right: 10px;
+
+}
+
+
+.voice-over button:last-child {
+    margin-right: 0;
+}

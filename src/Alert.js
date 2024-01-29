@@ -1,0 +1,1 @@
+alert("This site is only intended to showcase my portfolio.")

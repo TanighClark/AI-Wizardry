@@ -1,0 +1,47 @@
+.why {
+    padding-bottom: 80px;
+    background: linear-gradient(to right, #3399FF, #33CC33);
+    padding-top: 80px;
+}
+
+.user-benefits-container {
+    font-family: Poppins;
+    background-color: #f2f2f2;
+    color: #333;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.user-benefits-container h3 {
+    font-size: 22px;
+    color: #1a73e8;
+    margin-bottom: 15px;
+}
+
+.user-benefits-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-benefits-container li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.user-benefits-container li::before {
+    content: '✔';
+    color: #1a73e8;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.user-benefits-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: center;
+}
