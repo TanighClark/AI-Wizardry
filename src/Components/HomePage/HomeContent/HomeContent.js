@@ -23,7 +23,7 @@ const HomeContent = () => {
                     </div>
                 </div>
                 <div className="left">
-                    <h5>Give your characters a voice that echoes through the realms,  text-to-speech. </h5>
+                    <h5>Give your characters a voice that echoes through the realms, text-to-speech. </h5>
                     <div className="image"><img src={three} alt="" />
                     </div>
                 </div>
