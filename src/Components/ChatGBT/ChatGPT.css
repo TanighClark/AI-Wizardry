@@ -1,0 +1,52 @@
+.storybook-app {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.input-section textarea.story-input {
+    width: 80%;
+
+    height: 350px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.actions .fetch-button,
+.download-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.actions .fetch-button:disabled {
+    background-color: #ccc;
+}
+
+.actions .fetch-button:hover,
+.download-button:hover {
+    background-color: #f90;
+}
+
+.story-response {
+    margin-top: 20px;
+}
+
+.story-response .story-text {
+    text-align: left;
+    max-width: 80%;
+    margin: auto;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 20px;
+}

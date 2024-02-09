@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import "./ChatGPT.css"
 
 const ChatGPT = () => {
     const [response, setResponse] = useState(null);
@@ -6,37 +7,41 @@ const ChatGPT = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
-    const endpoint = 'https://api.openai.com/v1/completions';
+    const endpoint = 'https://api.openai.com/v1/chat/completions';
 
     const fetchData = async () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(endpoint, {
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${apiKey}`,
                 },
                 body: JSON.stringify({
-                    prompt: userInput,
-                    max_tokens: 100,
+                    model: "gpt-3.5-turbo",
+                    messages: [{
+                        role: "user",
+                        content: userInput
+                    }]
                 }),
             });
 
-            const data = await response.json();
-            if (data.choices && data.choices.length > 0) {
-                setResponse(data.choices[0].text);
-            } else {
-                setResponse("No response from the API");
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
             }
+
+            const data = await response.json();
+            setResponse(data.choices ? data.choices[0].message.content : "No response from the API");
         } catch (error) {
             console.error("Error fetching completion:", error);
-            setResponse("Error fetching data");
+            setResponse(`Error fetching data: ${error.message}`);
         } finally {
             setIsLoading(false);
         }
     };
+
 
     const handleInputChange = (event) => {
         setUserInput(event.target.value);
@@ -57,26 +62,32 @@ const ChatGPT = () => {
     };
 
     return (
-        <div>
-            <div className="input-box">
+        <div className="storybook-app">
+            <h2>Create Your Story</h2>
+            <div className="input-section">
                 <textarea
-                    type="text"
-                    placeholder='Enter your text here'
+                    className="story-input"
+                    placeholder="EX: My characters name is Sally. Can you write a short story about sally? 
+                    Can you bold the key scenes that would make great illustrations? "
                     onChange={handleInputChange}
                     value={userInput}
                 />
             </div>
-            <button onClick={fetchData} disabled={isLoading}>
-                {isLoading ? 'Fetching...' : 'Fetch Data'}
-            </button>
+            <div className="actions">
+                <button className="fetch-button" onClick={fetchData} disabled={isLoading}>
+                    {isLoading ? 'Creating your story...' : 'Write My Story'}
+                </button>
+            </div>
             {response && (
-                <>
-                    <p>Response: {response}</p>
-                    <button onClick={downloadText}>Download Text</button>
-                </>
+                <div className="story-response">
+                    <h3>Your Story</h3>
+                    <p className="story-text">{response}</p>
+                    <button className="download-button" onClick={downloadText}>Download My Story</button>
+                </div>
             )}
         </div>
     );
+
 };
 
 export default ChatGPT;
